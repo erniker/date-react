@@ -30,9 +30,12 @@ test("<Formulario/> Validacion de formulario", () => {
   // Click en el boton de submit
   const btnSubmit = screen.getByTestId("btn-submit");
   fireEvent.click(btnSubmit);
+  expect(screen.getByTestId("alerta")).toBeInTheDocument();
   expect(screen.getByTestId("alerta").textContent).toBe(
     "Todos los campos son obligatorios"
   );
+  expect(screen.getByTestId("alerta").tagName).toBe("P");
+  expect(screen.getByTestId("alerta").tagName).not.toBe("BUTTON");
   // Revisar por la alerta
 });
 
