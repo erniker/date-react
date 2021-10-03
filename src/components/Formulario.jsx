@@ -63,9 +63,9 @@ const Formulario = ({ crearCita }) => {
 
   return (
     <>
-      <h2>Crear Cita</h2>¨
+      <h2 data-testid="titulo">Crear Cita</h2>¨
       {error ? (
-        <p className="alerta-error">Todos los campos son obligatorios</p>
+        <p  data-testid="alerta" className="alerta-error">Todos los campos son obligatorios</p>
       ) : null}
       <form onSubmit={submitCita}>
         <label>Nombre Mascota</label>
@@ -110,7 +110,7 @@ const Formulario = ({ crearCita }) => {
           onChange={handleStage}
           value={sintomas}
         ></textarea>
-        <button type="submit" className="u-full-width button-primary">
+        <button data-testid="btn-submit" type="submit" className="u-full-width button-primary">
           Agregar Cita
         </button>
       </form>
