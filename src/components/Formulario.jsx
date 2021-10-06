@@ -47,7 +47,7 @@ const Formulario = ({ crearCita }) => {
 
     // Asignar un ID
     cita.id = uuid();
-
+    console.log(cita);
     // Crear la Cita
     crearCita(cita);
 
@@ -70,6 +70,7 @@ const Formulario = ({ crearCita }) => {
       <form onSubmit={submitCita}>
         <label>Nombre Mascota</label>
         <input
+          data-testid="mascota"
           type="text"
           name="mascota"
           className="u-full-width"
@@ -79,6 +80,7 @@ const Formulario = ({ crearCita }) => {
         />
         <label>Nombre Dueño</label>
         <input
+          data-testid="propietario"
           type="text"
           name="propietario"
           className="u-full-width"
@@ -88,6 +90,7 @@ const Formulario = ({ crearCita }) => {
         />
         <label>Fecha</label>
         <input
+          data-testid="fecha"
           type="date"
           name="fecha"
           className="u-full-width"
@@ -96,6 +99,7 @@ const Formulario = ({ crearCita }) => {
         />
         <label>Hora</label>
         <input
+          data-testid="hora"
           type="time"
           name="hora"
           className="u-full-width"
@@ -105,6 +109,7 @@ const Formulario = ({ crearCita }) => {
 
         <label>Síntomas</label>
         <textarea
+          data-testid="sintomas"
           className="u-full-width"
           name="sintomas"
           onChange={handleStage}
